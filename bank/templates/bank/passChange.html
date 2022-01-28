@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block bodyblock %}
+    <form method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" onclick="buttonClick(event)" >Change Password</button>
+    </form>
+{% endblock %}
