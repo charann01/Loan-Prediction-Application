@@ -2,10 +2,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
-
 from bank.models import BankModel
-from .forms import AccountRequestForm
+from .forms import AccountRequestForm, passwordChangeForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
 
 
 """
@@ -87,5 +87,15 @@ def BankProfileUpdateView(request):
 name:Password Change View
 desc: this endpoint is used to change the password of a bank account
 """
+@login_required(login_url='login')
 def PasswordChangeView(request):
-    return render(request,'bank/passChange.html',{})
+    form = passwordChangeForm()
+    if request.method == "POST":
+        form = passwordChangeForm(data=request.POST)
+        if form.is_valid():
+            bank = authenticate(request,email=request.user.email,password=form.cleaned_data['current_password'])
+            if bank:
+                bank.set_password(form.cleaned_data['new_password'])
+                bank.save()
+                update_session_auth_hash(request, bank)
+    return render(request,'bank/passChange.html',{'form':form})
