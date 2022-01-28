@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+
+from bank.models import BankModel
 from .forms import AccountRequestForm
 from django.contrib.auth.decorators import login_required
 
@@ -53,3 +55,37 @@ desc: Sign out of their account
 def LogoutView(request):
     logout(request)
     return redirect('login')
+
+
+"""
+name: Profile View
+desc: Banks details are displayed here and can be updated.
+"""
+@login_required(login_url='login')
+def BankProfileView(request):
+    bank = request.user
+    return render(request,'bank/profile.html',{'bank':bank})
+
+"""
+name: Profile Update View
+desc: Banks details can be updated here.
+"""
+@login_required(login_url='login')
+def BankProfileUpdateView(request):
+    bank = request.user
+    if request.method == "POST":
+        BankModel.objects.filter(bankname=bank.bankname).update(
+            bankname=request.POST['bankname'],
+            email=request.POST['email'],
+            address=request.POST['address'],
+            contactnumber=request.POST['contactnumber']
+        )
+        return redirect('update')
+    return render(request,'bank/update.html',{'bank':bank})
+
+"""
+name:Password Change View
+desc: this endpoint is used to change the password of a bank account
+"""
+def PasswordChangeView(request):
+    return render(request,'bank/passChange.html',{})

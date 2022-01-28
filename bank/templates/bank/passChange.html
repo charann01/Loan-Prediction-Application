@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block bodyblock %}
+    <form method="POST" >
+        {% csrf_token %}
+        <input type="password" name="new-password" placeholder="New Password" />
+        <input type="password" name="confirm-password" placeholder="Confirm Password"/>
+        <input type="password" name="password" placeholder="Current Password"/>
+        <button type="submit" onclick="buttonClick(event)" >Change Password</button>
+    </form>
+
+    <script>
+        let button = document.querySelector('#submit')
+        let newPass = document.querySelector('[name="new-password"]')
+        function buttonClick(e){
+            
+            console.log("clicked");
+            e.preventDefault();
+        }
+    </script>
+{% endblock %}

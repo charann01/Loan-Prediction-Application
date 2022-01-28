@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block bodyblock %}
+    <form method="POST" >
+        {% csrf_token %}
+        <input type="text" name="bankname" value="{{ bank.bankname }}" />
+        <input type="email" name="email" value="{{ bank.email }}" />
+        <input type="text" name="contactnumber" value="{{ bank.contactnumber }}" />
+        <textarea name="address" cols="30" rows="10">{{ bank.address }}</textarea>
+        <button type="submit" >Update</button>
+    </form>
+{% endblock %}
