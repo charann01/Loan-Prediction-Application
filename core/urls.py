@@ -7,7 +7,8 @@ from bank.views import HomeView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bank/', include('bank.urls')),
-    path('',HomeView,name="home")
+    path('',HomeView,name="home"),
+    path('report/',include('report.urls'))
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
