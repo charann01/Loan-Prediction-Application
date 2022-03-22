@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block bodyblock %}
-    <p>Hi {{ request.user }}</p>
+{% include 'loggedIn.html' %}
+<br><br><br>
+<div class="contain">
+    <img src="{% static 'images/landing.jpg' %}" alt="image" class="homeimg">
+    <div class="centered">
+        <p>Welcome {{ request.user.bankname }}</p></div>
+
+
+</div>
 {% endblock %}

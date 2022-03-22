@@ -1,11 +1,35 @@
 {% extends 'base.html' %}
 {% block bodyblock %}
-    <form method="POST" >
-        {% csrf_token %}
-        <input type="text" name="bankname" value="{{ bank.bankname }}" />
-        <input type="email" name="email" value="{{ bank.email }}" />
-        <input type="text" name="contactnumber" value="{{ bank.contactnumber }}" />
-        <textarea name="address" cols="30" rows="10">{{ bank.address }}</textarea>
-        <button type="submit" >Update</button>
-    </form>
+{% include 'loggedIn.html' %}
+<br>
+<br>
+<div class="container">
+    <div class="wrapper">
+        <div class="title"><span>Update Profile</span></div>
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" name="bankname" value="{{ bank.bankname }}" />
+            </div>
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="email" name="email" value="{{ bank.email }}" />
+            </div>
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" name="contactnumber" value="{{ bank.contactnumber }}" />
+            </div>
+            <div class="row">  
+                <i class="fas fa-user"></i> 
+                <!-- <textarea id="addr" name="address" cols="30" rows="10">{{ bank.address }}</textarea> -->
+                <input type="text" name="address" value="{{ bank.address }}">
+            </div>
+            <div class="row button">
+             <input type="submit" ></input>
+            </div>
+        </form>
+    </div>
+</div>
+
 {% endblock %}
