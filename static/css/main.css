@@ -352,18 +352,8 @@ body.dark .wrapper .title{
   position: relative;
 }
 
-/* .wrapper form .rowAdd{
-  height: 65px;
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-}
 
-#addr{
-  width: 75px;
-} */
 .wrapper form .row input
-/* .wrapper form .rowAdd textarea */
 {
   height: 100%;
   width: 100%;
@@ -487,10 +477,11 @@ form .signup-link a:hover{
   min-height: 200px;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
-  filter: blur(2px);
+  /* filter: blur(2px);
   -webkit-filter: blur(2px);
-  filter: contrast(20%);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  filter: contrast(20%); */
+  
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* body.dark .homeimg{
@@ -512,10 +503,8 @@ form .signup-link a:hover{
   text-align: center;
   color: #fff;
   font-size: 35px;
-  font-weight: 500;
-  -webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: var(--nav-color);
-
+  font-weight: 600;
+ 
 }
 
 
@@ -525,7 +514,140 @@ form .signup-link a:hover{
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(15, 21, 97, 0.5);
 }
+
+
+
+/*------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+::selection{
+  background: #0f1561;
+}
+.containerR{
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 0px auto auto auto;
+}
+.wrapperR{
+  width: 100%;
+ 
+}
+
+.wrapperR form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapperR form .row{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+
+.wrapperR form .row input
+{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus
+{
+  border-color: #0f1561;
+  box-shadow: inset 0px 0px 2px 2px #0f1561;
+}
+body.dark form .row input:focus
+{
+    border-color: var(--search-bar);
+    box-shadow: inset 0px 0px 2px 2px var(--search-bar);
+  }
+form .row input::placeholder{
+  color: #999;
+}
+.wrapperR form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: #0f1561;
+  border: 1px solid #0f1561;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.dark .wrapperR form .row i{
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #999;
+    font-size: 18px;
+    background: var(--search-bar);
+    border: 1px solid var(--search-bar);
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.wrapperR form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapperR form .pass a{
+  color: #0f1561;
+  font-size: 17px;
+  text-decoration: none;
+}
+body.dark .wrapperR form .pass a{
+    color: var(--search-bar);
+    font-size: 17px;
+    text-decoration: none;
+  }
+.wrapperR form .pass a:hover{
+  text-decoration: underline;
+}
+.wrapperR form .button input {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: #0f1561;
+  border: 1px solid #0f1561;
+  cursor: pointer;
+}
+
+
+
+body.dark .wrapperR form .button input{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: var(--search-bar);
+    border: 1px solid  var(--text-color);
+    cursor: pointer;
+  }
+form .button input:hover{
+  background: #fff;
+  color: #0f1561;
+}
+body.dark form .button input:hover{
+    background: #fff;
+    color: var(--search-bar);
+  }
+
+
 
 
 

@@ -10,4 +10,20 @@
     <p>{{ bank.contactnumber }}</p>
     <p>{{ bank.address }}</p>
     
+    <div class="containerR">
+        <div class="wrapperR">
+          <form >
+            <div class="row button">
+            <a href="{% url 'update' %}">
+              <input type="button" value="Update Profile">
+              </a>
+            </div>
+            <div class="row button">
+                <a href="{% url 'passchange' %}">
+                  <input type="button" value="Change Password">
+                  </a>
+                </div>
+          </form>
+        </div>
+      </div>
 {% endblock %}

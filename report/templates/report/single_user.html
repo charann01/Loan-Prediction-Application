@@ -12,4 +12,16 @@
     {% if out is not None %}
         <p>{{ out }}</p>
     {% endif %}
+    <div class="containerR">
+        <div class="wrapperR">
+          <form >
+            <div class="row button">
+            <a href="{% url 'sheet-report' %}">
+              <input type="button" value="Predict for multiple users >>>">
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
 {% endblock %}

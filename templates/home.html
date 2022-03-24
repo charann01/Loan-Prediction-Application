@@ -4,10 +4,29 @@
 {% include 'loggedIn.html' %}
 <br><br><br>
 <div class="contain">
-    <img src="{% static 'images/landing.jpg' %}" alt="image" class="homeimg">
+    <img src="{% static 'images/landi.jpg' %}" alt="image" class="homeimg">
     <div class="centered">
-        <p>Welcome {{ request.user.bankname }}</p></div>
-
+        <!-- <p class="typewriter">Welcome {{ request.user.bankname }}!</p> -->
+        <div class="typewriter">
+            <p class="typewriter">Welcome {{ request.user.bankname }}!</p>
+        </div>
+    </div>
 
 </div>
-{% endblock %}
+
+    <!-- <button class="redirect"><a href="{% url 'sheet-report' %}">Get Started</a></button> -->
+
+    <div class="containerR">
+        <div class="wrapperR">
+          <form >
+            <div class="row button">
+            <a href="{% url 'sheet-report' %}">
+              <input type="button" value="Get Started">
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    {% endblock %}

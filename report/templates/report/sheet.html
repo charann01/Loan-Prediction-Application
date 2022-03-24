@@ -7,4 +7,16 @@
         {{ form.as_p }}
         <button type="submit">Predict</button>
     </form>
+    <div class="containerR">
+        <div class="wrapperR">
+          <form >
+            <div class="row button">
+            <a href="{% url 'single-report' %}">
+              <input type="button" value="Predict for single user >>>">
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
 {% endblock %}
